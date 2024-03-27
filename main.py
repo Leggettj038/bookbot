@@ -10,6 +10,7 @@ def main():
     print(f"--- Begin report of {book_path} ---")
     print(f"{count} words found in the document")
     print("")
+    #Searchs through the "sorted_list" dictionary for a letter and outputs how many times that letter appears
     for letter, number in sorted_list:
         if letter.isalpha():
             print(f"The '{letter}' character was found {number} times")
@@ -29,6 +30,7 @@ def count_words(text):
     words = text.split()
     return len(words)    
 
+#Counts the number of times a letter appears and adds it to the dictionary "letters", returned to "letter_count"
 def count_letters(lower_text):
     letters = {}
     for l in lower_text:
@@ -38,6 +40,7 @@ def count_letters(lower_text):
             letters[l] = 1
     return letters
 
+#Sorts the "letters_count" dictionary based on the number of times a character appears into a new dictionary called "sorted_list" 
 def sort_dictionary(letter_count):
     return sorted(letter_count.items(),reverse=True, key=lambda x: x[1])
 
